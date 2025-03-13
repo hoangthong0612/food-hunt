@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Hunt</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #4caf50;
+        color: white;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .logo span {
+        color: black;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+      }
+      .content h1 {
+        color: #4caf50;
+        font-size: 36px;
+      }
+      .content h2 {
+        font-size: 28px;
+      }
+      .content button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .food-display {
+        position: relative;
+      }
+      .main-dish img {
+        width: 300px;
+        border-radius: 50%;
+      }
+      .small-dishes {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .small {
+        width: 80px;
+        border-radius: 50%;
+        transition: transform 0.3s;
+      }
+      .small:hover {
+        transform: scale(1.2);
+      }
+      .svg-icon {
+        width: 34px;
+        height: 26px;
+        background-color: #5cac0e;
+        border-radius: 0px;
+        box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+        position: relative;
+      }
+
+      .svg-icon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const smallDishes = document.querySelectorAll(".small");
+        smallDishes.forEach((dish) => {
+          dish.addEventListener("mouseenter", function () {
+            document.querySelector(".main-dish img").src = this.src;
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Food<span>Hunt</span></div>
+      <div class="svg-icon"></div>
+
+      <svg
+        width="34"
+        height="26"
+        viewBox="0 0 34 26"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_d_15_8)">
+          <path
+            d="M4.07813 16.246C4.13889 15.3299 4.23438 14.1577 4.38195 12.7858C4.56425 11.3965 4.90279 9.76409 5.46704 7.98407C6.23094 6.1997 7.44624 4.35889 9.16501 2.67438C11.2657 1.26338 13.922 0.295224 16.9342 0C19.9204 0.273516 22.5854 1.21563 24.7121 2.61794C26.4396 4.28074 27.6809 6.12155 28.4796 7.90158C29.0438 9.67726 29.3997 11.314 29.5907 12.699C29.7469 14.0709 29.8424 15.2561 29.9119 16.1722C29.9726 17.0839 30.0074 17.644 29.9987 17.861C29.9553 18.0347 29.7903 17.7699 29.4344 17.0752C28.8702 16.3241 27.8025 15.1953 26.0837 13.8755C23.7573 12.8162 20.6148 11.9696 16.9256 11.6049C13.2276 11.9956 10.0938 12.8683 7.81082 13.9406C6.10941 15.2822 5.07641 16.4197 4.52952 17.1707C4.19098 17.861 4.03472 18.1215 4 17.9479C4 17.7178 4.01736 17.1577 4.07813 16.246Z"
+            fill=""
+          />
+          <path
+            d="M4.57702 16.2792L4.57703 16.2791C4.63729 15.3706 4.73202 14.2073 4.87846 12.8451C5.05639 11.4916 5.38633 9.89831 5.93626 8.15853C6.66961 6.45376 7.83362 4.68763 9.48203 3.06386C11.4926 1.72322 14.038 0.793612 16.9358 0.502299C19.8086 0.772703 22.3627 1.67749 24.3985 3.01017C26.054 4.61186 27.2439 6.3778 28.0117 8.08032C28.5619 9.81699 28.9084 11.4142 29.0946 12.7615C29.2492 14.1204 29.344 15.2955 29.4131 16.2077C29.4143 16.2247 29.4154 16.2416 29.4165 16.2583C28.7725 15.5109 27.7868 14.5529 26.3882 13.4789L26.3429 13.4441L26.2909 13.4205C23.9058 12.3344 20.7084 11.4764 16.9747 11.1073L16.9239 11.1023L16.873 11.1077C13.1309 11.5031 9.94109 12.3876 7.59825 13.4881L7.54631 13.5125L7.50124 13.548C6.14837 14.6147 5.20087 15.5624 4.57531 16.305C4.57588 16.2964 4.57645 16.2879 4.57702 16.2792Z"
+            stroke="black"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_d_15_8"
+            x="0"
+            y="0"
+            width="34"
+            height="26"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_15_8"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_15_8"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+
+      <nav>
+        <ul>
+          <li><a href="#">BreakFast</a></li>
+          <li><a href="#">Lunch</a></li>
+          <li><a href="#">Dinner</a></li>
+        </ul>
+      </nav>
+      <div class="lock-icon">🔒</div>
+    </header>
+    <section class="hero">
+      <div class="content">
+        <h1><span>Delicious</span></h1>
+        <h2>Quench the Hunger</h2>
+        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>Quench Now</button>
+      </div>
+      <div class="food-display">
+        <div class="main-dish">
+          <img src="/images/image1.png" alt="Main Dish" />
+        </div>
+        <div class="small-dishes">
+          <img src="/images/image1.png" class="small" alt="Dish 1" />
+          <img src="/images/image2.png" class="small" alt="Dish 2" />
+          <img src="/images/image3.png" class="small" alt="Dish 3" />
+          <img src="/images/image4.png" class="small" alt="Dish 4" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
