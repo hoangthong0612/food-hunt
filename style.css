@@ -54,6 +54,7 @@ header {
 .navbar__logo svg {
   /* height: 100%; */
   margin-right: 32px;
+  fill: var(--primary-color);
 }
 
 .navbar__logo span {
