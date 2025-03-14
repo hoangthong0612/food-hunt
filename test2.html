@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xếp phần tử hình tròn</title>
+    <style>
+      .circle-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border: 2px dashed gray;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: dodgerblue;
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        transform: translate(-50%, 50%);
+        left: 50%;
+        top: 50%;
+      }
+
+      /* Tính toán vị trí theo vòng tròn */
+      .item:nth-child(1) { transform: rotate(-90deg) translate(150px) rotate(90deg) translate(-50%, -50%); }
+        .item:nth-child(2) { transform: rotate(-54deg) translate(150px) rotate(54deg) translate(-50%, -50%); }
+        .item:nth-child(3) { transform: rotate(-18deg) translate(150px) rotate(18deg) translate(-50%, -50%); }
+        .item:nth-child(4) { transform: rotate(18deg) translate(150px) rotate(-18deg) translate(-50%, -50%); }
+        .item:nth-child(5) { transform: rotate(54deg) translate(150px) rotate(-54deg) translate(-50%, -50%); }
+        .item:nth-child(6) { transform: rotate(90deg) translate(150px) rotate(-90deg) translate(-50%, -50%); }
+        .item:nth-child(7) { transform: rotate(126deg) translate(150px) rotate(-126deg) translate(-50%, -50%); }
+        .item:nth-child(8) { transform: rotate(162deg) translate(150px) rotate(-162deg) translate(-50%, -50%); }
+        .item:nth-child(9) { transform: rotate(198deg) translate(150px) rotate(-198deg) translate(-50%, -50%); }
+        .item:nth-child(10) { transform: rotate(234deg) translate(150px) rotate(-234deg) translate(-50%, -50%); }
+    </style>
+    </style>
+  </head>
+  <body>
+    <div class="circle-container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+    </div>
+  </body>
+</html>

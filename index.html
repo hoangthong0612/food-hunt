@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Hunt</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -95,21 +99,30 @@
 
       <div class="hero__food">
         <div class="food_small">
-          <img src="/images/image1.png" alt="" />
-          <img src="/images/image2.png" alt="" />
-          <img src="/images/image3.png" alt="" />
-          <img src="/images/image4.png" alt="" />
-          <img src="/images/image5.png" alt="" />
-          <img src="/images/image6.png" alt="" />
-          <img src="/images/image7.png" alt="" />
-          <img src="/images/image8.png" alt="" />
-          <img src="/images/image9.png" alt="" />
-          <img src="/images/image10.png" alt="" />
+          <div class="small__image">
+            <img class="item" src="/images/image1.png" alt="" />
+            <img class="item" src="/images/image2.png" alt="" />
+            <img class="item" src="/images/image3.png" alt="" />
+            <img class="item" src="/images/image4.png" alt="" />
+            <img class="item" src="/images/image5.png" alt="" />
+            <img class="item" src="/images/image6.png" alt="" />
+            <img class="item" src="/images/image7.png" alt="" />
+            <img class="item" src="/images/image8.png" alt="" />
+            <img class="item" src="/images/image9.png" alt="" />
+            <img class="item" src="/images/image10.png" alt="" />
+          </div>
         </div>
         <div class="food_main">
-          <button>1</button>
-          <img src="/images/image1.png" alt="" />
-          <button>2</button>
+          <div class="prev">
+            <button><i class="fa-solid fa-arrow-down"></i></button>
+          </div>
+          <div class="main_images">
+            <img class="image__display " style="z-index: 1;" src="/images/image10.png" alt="" />
+            <img class="image__hide" style="z-index: 0; opacity: 0;" src="/images/image1.png" alt="" />
+          </div>
+          <div class="next">
+            <button><i class="fa-solid fa-arrow-down"></i></button>
+          </div>
         </div>
       </div>
     </section>
